@@ -47,7 +47,7 @@ class App extends Component {
   // get the default weather (chicago) from the api
   async componentDidMount() {
     const { data } = await axios.get(
-      `https://api.darksky.net/forecast/bab642085489d446f31df424bdf3e506/${this.state.location.current}`
+      `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/bab642085489d446f31df424bdf3e506/${this.state.location.current}`
     );
   
     const { data: allDays } = data.daily;
@@ -81,7 +81,7 @@ class App extends Component {
    updateTest = async (e)=>{
     const name = e.target.name
     const { data } = await axios.get(
-      `https://api.darksky.net/forecast/bab642085489d446f31df424bdf3e506/${e.target.value}`
+      `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/bab642085489d446f31df424bdf3e506/${e.target.value}`
     );
     
     const { data: allDays } = data.daily;

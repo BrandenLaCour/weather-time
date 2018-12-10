@@ -49,7 +49,7 @@ class App extends Component {
     const { data } = await axios.get(
       `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/bab642085489d446f31df424bdf3e506/${this.state.location.current}`
     );
-  
+    console.log('cors worked')
     const { data: allDays } = data.daily;
     
    

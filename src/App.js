@@ -48,7 +48,7 @@ class App extends Component {
         this.state.location.current
       }`
     );
-    console.log("cors worked");
+    console.log(data);
     const { data: allDays } = data.daily;
 
     let week = [...this.state.week];
@@ -64,8 +64,8 @@ class App extends Component {
     ];
 
     const fiveDay = week.map((e, i) => {
-      e.high = Math.round(days[i].apparentTemperatureMax);
-      e.low = Math.round(days[i].apparentTemperatureMin);
+      e.high = Math.round(days[i].temperatureHigh);
+      e.low = Math.round(days[i].temperatureLow);
       e.cast = days[i].icon;
       e.day = week[i].day;
       return e;

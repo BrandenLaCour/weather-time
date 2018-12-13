@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import WeatherGrid from "./components/weatherGrid";
 import { currentWeek } from "./components/utils/currentWeek";
-import Input from "./components/utils/input";
+import Change from "./components/utils/change";
 import "./App.css";
 import axios from "axios";
+
+//need to use googles geocode api to convert writen towns into latitude and longitude, so people can write in addresses
+// also, map state instead of listing it like below if possible.
 
 // need to refractor a lot of code on this page into components. Mainly the axios calls.
 
@@ -84,6 +87,7 @@ class App extends Component {
   };
   // switch the location to the designated area
   updateTest = async e => {
+    console.log("ran");
     const name = e.target.name;
     const { data } = await axios.get(
       `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/bab642085489d446f31df424bdf3e506/${
@@ -128,8 +132,7 @@ class App extends Component {
         <div className="row justify-content-center">
           <img src="https://bit.ly/2PPfHJ5" alt="" />
         </div>
-        <Input
-          toggle={toggle.show}
+        <Change
           click={this.handleToggle}
           loc={this.updateTest}
           label={location.name}

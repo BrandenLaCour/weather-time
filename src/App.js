@@ -3,6 +3,7 @@ import WeatherGrid from "./components/weatherGrid";
 import { currentWeek } from "./components/utils/currentWeek";
 import Change from "./components/utils/change";
 import "./App.css";
+import Logo from "./components/utils/logo.png";
 import axios from "axios";
 
 //need to use googles geocode api to convert writen towns into latitude and longitude, so people can write in addresses
@@ -130,7 +131,7 @@ class App extends Component {
     return (
       <div id="background">
         <div className="row justify-content-center">
-          <img src="https://bit.ly/2PPfHJ5" alt="" />
+          <img src={Logo} alt="" />
         </div>
         <Change
           click={this.handleToggle}
